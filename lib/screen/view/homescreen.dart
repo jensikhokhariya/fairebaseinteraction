@@ -1,113 +1,63 @@
-import 'package:fairebaseinteraction/screen/view/registerscreen.dart';
+import 'package:fairebaseinteraction/screen/controller/homecontroller.dart';
+import 'package:fairebaseinteraction/screen/view/loginscreen.dart';
+import 'package:fairebaseinteraction/screen/view/splashscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
-class Login_Page extends StatefulWidget {
-  const Login_Page({Key? key}) : super(key: key);
+class Home_Page extends StatefulWidget {
+  const Home_Page({Key? key}) : super(key: key);
 
   @override
-  State<Login_Page> createState() => _Login_PageState();
+  State<Home_Page> createState() => _Home_PageState();
 }
 
-class _Login_PageState extends State<Login_Page> {
-  TextEditingController e1 = TextEditingController();
-  TextEditingController p1 = TextEditingController();
+class _Home_PageState extends State<Home_Page> {
+  HomeController homeController = Get.put(
+    HomeController(),
+  );
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.pink,
+          title: Text(
+            "Taste Me",
+            style: TextStyle(color: Colors.white),
+          ),
+          centerTitle: true,
+        ),
         body: Padding(
           padding: EdgeInsets.all(10),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: 300,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  homeController.signout();
+                  Get.to(
+                    Login_Page(),
+                  );
+                },
+                child: Container(
+                  height: 60,
                   width: double.infinity,
                   alignment: Alignment.center,
+                  child: Text(
+                    "Sign Out",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                    ),
+                  ),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(60),bottomLeft: Radius.circular(60),),
+                    borderRadius: BorderRadius.circular(50),
                     color: Colors.pink,
                   ),
-                  child: Text(
-                    "Test Me",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                  ),
                 ),
-                SizedBox(
-                  height: 25,
-                ),
-                TextField(
-                  controller: e1,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    prefixIcon: Icon(
-                      Icons.mail,
-                      color: Colors.pink,
-                    ),
-                    hintText: "E-mail",
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                TextField(
-                  controller: p1,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    prefixIcon: Icon(
-                      Icons.lock,
-                      color: Colors.pink,
-                    ),
-                    hintText: "Password",
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                GestureDetector(
-                  onTap: (){
-                    Get.to(Register_Page(),);
-                  },
-                  child: Container(
-                    height: 60,
-                    width: double.infinity,
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
-                      ),
-                    ),
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        color: Colors.pink),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Dont have an Account ?"),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    TextButton(onPressed: (){}, child: Text("Sign Up",style: TextStyle(color: Colors.pink),))
-                  ],
-                )
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

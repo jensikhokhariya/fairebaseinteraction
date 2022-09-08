@@ -1,17 +1,18 @@
 import 'package:fairebaseinteraction/screen/controller/homecontroller.dart';
 import 'package:fairebaseinteraction/screen/view/homescreen.dart';
-import 'package:fairebaseinteraction/screen/view/loginscreen.dart';
+import 'package:fairebaseinteraction/screen/view/registerscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
 
-class Register_Page extends StatefulWidget {
-  const Register_Page({Key? key}) : super(key: key);
+class Login_Page extends StatefulWidget {
+  const Login_Page({Key? key}) : super(key: key);
 
   @override
-  State<Register_Page> createState() => _Register_PageState();
+  State<Login_Page> createState() => _Login_PageState();
 }
 
-class _Register_PageState extends State<Register_Page> {
+class _Login_PageState extends State<Login_Page> {
   TextEditingController e1 = TextEditingController();
   TextEditingController p1 = TextEditingController();
   HomeController homeController = Get.put(HomeController());
@@ -82,11 +83,13 @@ class _Register_PageState extends State<Register_Page> {
                   height: 20,
                 ),
                 GestureDetector(
-                  onTap: ()async {
-                    var res =await homeController.findUser(e1.text, p1.text);
+                  onTap: () async {
+                    var res = await homeController.loginUser(e1.text, p1.text);
                     Get.snackbar("Login", "$res");
-                    if(res == "Success"){
-                      Get.to(Login_Page(),);
+                    if (res == "Success") {
+                      Get.to(
+                        Home_Page(),
+                      );
                     }
                   },
                   child: Container(
@@ -94,7 +97,7 @@ class _Register_PageState extends State<Register_Page> {
                     width: double.infinity,
                     alignment: Alignment.center,
                     child: Text(
-                      "Sign Up",
+                      "Login",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -103,6 +106,44 @@ class _Register_PageState extends State<Register_Page> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         color: Colors.pink),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Dont have an Account ?"),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Get.to(
+                            Register_Page(),
+                          );
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(color: Colors.pink),
+                        ))
+                  ],
+                ),
+                TextButton(
+                  onPressed: () {
+                    homeController.googleSignIn();
+                    // var res= homeController.googleSignIn();
+                    // Get.snackbar("Login", "$res");
+                    //  if (res == "Success") {
+                    //    Get.to(
+                    //      Home_Page(),
+                    //    );
+                    // }
+                  },
+                  child: Text(
+                    "Login with Gogle",
+                    style: TextStyle(color: Colors.pink),
                   ),
                 ),
               ],
