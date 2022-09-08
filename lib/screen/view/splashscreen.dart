@@ -14,14 +14,22 @@ class _Spalsh_ScreenState extends State<Spalsh_Screen> {
       child: Scaffold(
         body: Center(
           child: Container(
-            height: 200,
-            width: 200,
-            color: Colors.green,
+            height: double.infinity,
+            width: double.infinity,
+            alignment: Alignment.center,
+            color: Colors.pink,
+            child: Text(
+              "Test Me",
+              style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ),
     );
   }
-  void get(){
-  }
+  // void get(){
+  // }
 }

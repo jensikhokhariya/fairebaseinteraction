@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "998196841375",
+    "project_id": "register-72708",
+    "storage_bucket": "register-72708.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998196841375:android:51673c5d763ec6d6e64baa",
+        "android_client_info": {
+          "package_name": "com.example.fairebaseinteraction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998196841375-tpboehribf8d96aqb3akeuo0bpqp6rng.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fairebaseinteraction",
+            "certificate_hash": "619070e2b1259c6d904642ef0600a32f9e50fbe5"
+          }
+        },
+        {
+          "client_id": "998196841375-os5pv12om5stoldtdc6v9j44k7ottdia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzuI6kmBuSMRtulRiJqa_By_HtTGks9yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998196841375-os5pv12om5stoldtdc6v9j44k7ottdia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

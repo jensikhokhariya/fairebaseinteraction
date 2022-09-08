@@ -1,18 +1,15 @@
-import 'package:fairebaseinteraction/screen/view/registerscreen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
-class Login_Page extends StatefulWidget {
-  const Login_Page({Key? key}) : super(key: key);
+class Register_Page extends StatefulWidget {
+  const Register_Page({Key? key}) : super(key: key);
 
   @override
-  State<Login_Page> createState() => _Login_PageState();
+  State<Register_Page> createState() => _Register_PageState();
 }
 
-class _Login_PageState extends State<Login_Page> {
+class _Register_PageState extends State<Register_Page> {
   TextEditingController e1 = TextEditingController();
   TextEditingController p1 = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -74,15 +71,13 @@ class _Login_PageState extends State<Login_Page> {
                   height: 20,
                 ),
                 GestureDetector(
-                  onTap: (){
-                    Get.to(Register_Page(),);
-                  },
+                  onTap: (){},
                   child: Container(
                     height: 60,
                     width: double.infinity,
                     alignment: Alignment.center,
                     child: Text(
-                      "Login",
+                      "Sign Up",
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -93,19 +88,6 @@ class _Login_PageState extends State<Login_Page> {
                         color: Colors.pink),
                   ),
                 ),
-                SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Dont have an Account ?"),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    TextButton(onPressed: (){}, child: Text("Sign Up",style: TextStyle(color: Colors.pink),))
-                  ],
-                )
               ],
             ),
           ),
