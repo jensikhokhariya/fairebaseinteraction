@@ -41,7 +41,6 @@ class HomeController extends GetxController{
   }
   bool cheakUser(){
     var firebaseAuth = FirebaseAuth.instance;
-
     var user = firebaseAuth.currentUser;
     if(user!=null){
       return true;

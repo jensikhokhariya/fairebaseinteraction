@@ -1,6 +1,5 @@
 import 'package:fairebaseinteraction/screen/controller/homecontroller.dart';
 import 'package:fairebaseinteraction/screen/view/loginscreen.dart';
-import 'package:fairebaseinteraction/screen/view/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,9 +11,7 @@ class Home_Page extends StatefulWidget {
 }
 
 class _Home_PageState extends State<Home_Page> {
-  HomeController homeController = Get.put(
-    HomeController(),
-  );
+  HomeController homeController = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +30,7 @@ class _Home_PageState extends State<Home_Page> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text("${homeController}"),
               GestureDetector(
                 onTap: () {
                   homeController.signout();
