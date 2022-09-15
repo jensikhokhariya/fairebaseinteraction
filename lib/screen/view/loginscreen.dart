@@ -133,13 +133,7 @@ class _Login_PageState extends State<Login_Page> {
                 TextButton(
                   onPressed: () {
                     homeController.googleSignIn();
-                    // var res= homeController.googleSignIn();
-                    // Get.snackbar("Login", "$res");
-                    //  if (res == "Success") {
-                    //    Get.to(
-                    //      Home_Page(),
-                    //    );
-                    // }
+                     Get.off(Home_Page(),);
                   },
                   child: Text(
                     "Login with Gogle",

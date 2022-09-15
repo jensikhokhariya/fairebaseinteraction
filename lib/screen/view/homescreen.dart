@@ -1,5 +1,7 @@
 import 'package:fairebaseinteraction/screen/controller/homecontroller.dart';
 import 'package:fairebaseinteraction/screen/view/loginscreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +14,16 @@ class Home_Page extends StatefulWidget {
 
 class _Home_PageState extends State<Home_Page> {
   HomeController homeController = Get.put(HomeController());
+   User? user;
+  @override
+  void initState(){
+    super.initState();
+     user1();
+  }
+  dynamic user1(){
+    var firebaseAuth = FirebaseAuth.instance;
+     user = firebaseAuth.currentUser;
+   }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +42,12 @@ class _Home_PageState extends State<Home_Page> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("${homeController}"),
+              Text("E-mail: ${user!.email}",style: TextStyle(fontSize: 25),),
+              SizedBox(height: 15,),
+              Text("Uid: ${user!.uid}",style: TextStyle(fontSize: 25),),
+              SizedBox(height: 15,),
+              Text("Provider: ${user!.providerData}",style: TextStyle(fontSize: 25),),
+              SizedBox(height: 15,),
               GestureDetector(
                 onTap: () {
                   homeController.signout();
