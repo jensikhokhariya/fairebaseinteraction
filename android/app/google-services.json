@@ -7,6 +7,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:998196841375:android:ca9de601d7818484e64baa",
+        "android_client_info": {
+          "package_name": "com.book.taste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998196841375-ul43keonu7t3d3ld8bd5kbig5onm16u4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.book.taste",
+            "certificate_hash": "619070e2b1259c6d904642ef0600a32f9e50fbe5"
+          }
+        },
+        {
+          "client_id": "998196841375-os5pv12om5stoldtdc6v9j44k7ottdia.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzuI6kmBuSMRtulRiJqa_By_HtTGks9yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998196841375-os5pv12om5stoldtdc6v9j44k7ottdia.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:998196841375:android:51673c5d763ec6d6e64baa",
         "android_client_info": {
           "package_name": "com.example.fairebaseinteraction"
